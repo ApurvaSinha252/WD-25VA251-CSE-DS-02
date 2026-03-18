@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conditional statements in JS</title>
+</head>
+<body>
+    <script>
+        //
+        //if
+        let age=23;
+        if(age>=18){
+            console.log("Valid age for voting!")
+        }
+        //if..else
+
+        let myAge=45;
+        if(myAge<18)
+        {
+            console.log("Wait for next year");
+        }
+        else
+        {
+            console.log("You are eligible to vote.");
+        }
+        //switch....Evaluates an expression and executes block associated with matching case value . break is used to stop exec once a match is found.
+
+        let grade="C";
+        switch(grade)
+        {
+            case 'A': result="First Division";
+            break;
+            case 'B': result="Second Division";
+            break;
+            case 'C': result="Third Division";
+            break;
+            default: result="Fail";
+        }
+        console.log(result);
+        //if else if else----------used to specify new conditions to test if the previous condition was false,allowing for multiple conditions in sequence.
+
+        let marks=45;
+
+        if(marks>=60)
+        {
+            console.log("First div marks");
+        }
+        else if(marks<60 && marks>=40)
+        {
+            console.log("Second div marks");
+        }
+        else if(marks<40 && marks>=20)
+        {
+            console.log("Third div marks");
+        }
+        else
+        {
+            console.log("Fail");
+        } 
+        
+        let score=[75,80,95,45,86,90];
+        let sum=0;
+        for(let i=0 ; i<score.length ; i++)
+        {
+            sum=sum+score[i];
+        }
+        let average=sum/score.length;
+        for(let studentMark of score)
+        {
+            if(studentMark>=75)
+        {
+            console.log("First div marks"); 
+        }
+        else if(studentMark<75 && studentMark>=40)
+        {
+            console.log("Second div marks");
+        }
+        else if(studentMark<40 && studentMark>=20)
+        {
+            console.log("Third div marks");
+        }
+        else
+        {
+            console.log("Fail");
+        }
+        }
+
+    </script>
+</body>
+</html>

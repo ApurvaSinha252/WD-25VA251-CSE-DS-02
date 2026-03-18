@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops in JS</title>
+</head>
+<body>
+    <script>
+        //JS  provides several types of loops to repeatedly execute block of code until specified condition is met.
+        //for ............. best used when you know the no. of interations in advance
+
+        let studentlist=["Vikas" , "Vinay" , "Vishal", "Abhay" , "Sneha"];
+        for(let i=0;i<studentlist.length;i++)
+        {
+            console.log(studentlist[i]);
+        }
+
+        //while loop .......used when the number of iterations is uncertain , and the loop should continue as long as a condition is true.
+
+        let x=0;
+        while(x<studentlist.length)
+        {
+            console.log(studentlist[x]);
+            x++;
+        }
+        //for...of loop
+        //iterates over the values of iterable objects (like Arrays , strings , maps , sets )
+        for(let y of studentlist)
+        {
+            console.log(y);
+        }
+        let myinfo={
+            name:"Apurva Sinha",
+            age:19,
+            email:"apurvasinha252@gmail",
+            phone:6205560748,
+            address:{
+                area:"Ghaziabad",
+                city:"Ghaziabad",
+                state:"Uttar Pradesh"
+            },
+            education:null
+        };
+        for(let objKeys in myinfo){
+            console.log(myinfo[objKeys]);
+        }
+    </script>
+        
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JS</title>
+</head>
+<body>
+    
+     <script>
+        //Function: A JS function is a reusable block of code designed to perform a specific task.
+
+        //normal function (without parameters)
+
+        function demo(){
+            console.log("Hello JS");
+        }
+        demo();
+
+        //normal with parameters
+
+        function demo1(text){
+            console.log("Hello " + text);
+        }
+        demo1("React");
+        
+        //function with default parameters
+
+        function add(a , b=10){
+            console.log("Addition of two numbers is " + (a+b));
+        }
+        add(3);
+        add(3,15);
+        add();//gives NaN that is not a number because a is undefined so at least one value has to be passed in argument.
+
+        //Anonymous function : An anonymous function in JavaScript is a function without a name or identifier, used primarily for short, one-time tasks such as callbacks, event handlers, and array operations. They are defined using a function expression or the concise arrow function syntax, and are stored in variables or passed as arguments to other functions.
+
+        let cal=function(){
+            var num1=5;
+            var num2=10;
+            var result=num1*num2;
+            console.log("Multiplication of num1 and num2 is " + result);
+        }
+        cal();
+        
+        //Arrow function (with multi line statement with parameters): arrow function is also anonymous function . function keyword is not used in arrow function
+        //Arrow functions in JavaScript provide a concise syntax for writing functions using the => ("fat arrow") symbol and were introduced in ES6. They are particularly useful for short, simple functions and callbacks due to their shorter syntax and lexical this binding behavior. 
+        let div=(x,y)=>{
+            var num1=x;
+            var num2=y;
+            var res=x/y;
+            console.log("Division is " + res);
+        }
+        div(12,3);
+        
+        //Arrow function with single line statement
+
+        let msg=()=>console.log("Hello ABES")
+        msg();
+
+        //Callback function: A callback function is a function that is passed as an argument to another function and is executed later when that function is called.
+        
+        function sub(callback){
+            var num1=10;
+            var num2=20;
+            var res=num1-num2;
+            callback(res);
+        }
+        function displayRes(res){
+            console.log("Result is " + res);
+        }
+        sub(displayRes);
+
+        //callback using setTimeout API 
+
+        function msg1(){
+            console.log("Hello friend");
+        }
+        setTimeout(msg1,2000);
+
+     </script>
+
+</body>
+</html>
