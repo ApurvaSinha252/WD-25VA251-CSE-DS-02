@@ -77,6 +77,97 @@
             console.log("Hello friend");
         }
         setTimeout(msg1,2000);
+        //IFFE-An Immediately Invoked Function Expression (IIFE), pronounced "iffy," is a JavaScript function that runs as soon as it is defined. It creates a private scope for variables, preventing them from interfering with other code in the global scope
+        (function(a,b){
+            console.log(`First parameter${a} and second parameter ${b}`);
+            var res=a+b;
+            console.log(`Result is ${res}`);
+        })(4,5);
+        //short code using arrow function
+        (msg=>console.log("Hello IFFE"))();
+        
+        //Promises:- A promise is an object that represents the eventual completion or failure of an asynchronous operation. It is a core feature in modern JS used to handle operationslike fetching data from an API , reading files , or managing time delays in a clear more readable way than traditional callbacks , avoiding "callback hell".
+        //default behaviour of a function is synchronous.
+        //promises are used to handle asynchronous operations in JS.
+        //callback hell is a situation where multiple callbacks are nested , making code difficult to read and maintain.
+        //API - Application Programming Interface (API) is a set of rules and protocols for interacting with a software or hardware component, typically through a network connection.
+
+        //Logic for asynchronous using promises
+
+        let promise=new Promise(function(resolve,reject){
+            let age=17;
+            if(age>=18)
+        {
+            resolve("Valid age");
+        }
+        else{
+            reject("Wait for next year");
+        }
+        });
+        console.log(promise);
+        promise
+        .then(msg=>console.log(msg))
+        .catch(error=>console.log(error));
+        
+        //API using async and await......
+        //async and await - async and await are special JavaScript keywords that let you write asynchronous code in a style that looks synchronous, making it much cleaner and easier to read than traditional Promise chains or callbacks. 
+        /*async- The async keyword is used to declare an asynchronous function. 
+An async function always returns a Promise. If you return a non-Promise value from an async function, JavaScript automatically wraps it in a resolved Promise.8*/
+        /*await- The await keyword is used to pause the execution of an async function until a Promise is resolved.
+        */
+       
+        //https://dummyjson.com/products
+
+        //fetch API using async and await
+
+        async function userData(){
+            let response=await fetch('https://dummyjson.com/products/78');//this /78 is product id that i want to fetch if 787 is given product id not found will be shown
+            let responseData=await response.json();
+            console.log(responseData);
+            console.log(response);
+        }
+        userData();
+        
+        
+        //local storage in JS
+
+        let myInfo={
+            name:"Apurva Sinha",
+            age:20,
+            city:"Delhi",
+            mob:6205560748,
+            email:"apurvasinha252@gmail.com"
+        }
+        //convert the object into string using stringfy
+        let myInfoData=JSON.stringify(myInfo);
+
+        //set data
+        localStorage.setItem('preference',myInfoData);//here preference is a unique key
+
+        //retrieving and parsing the object back
+        let getmyInfoData=localStorage.getItem('preference');
+
+        const finalData=JSON.parse(getmyInfoData);
+        console.log(finalData.name);
+        //higher order function
+        //map() filter() reduce()
+
+        let num=[3,5,6,7,8,9,2,3,5,6,8,0];
+
+        //find the square of num
+        let result=num.map(n=>n*n);
+        console.log(`Square of num is ${result}`);
+        //find the number greater than 3
+        let result2=num.filter(n=>n>3);
+        console.log(`sorting of num array is ${result2}`);
+        //find the sum of num array
+        let result3=num.reduce((total,n)=>total+n);
+        console.log(`Sum of num array elements is ${result3}`);
+        //find multiply of each of 2 elements of num array
+       
+        num.forEach((n)=>console.log(n*2));
+
+
 
      </script>
 
