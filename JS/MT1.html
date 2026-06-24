@@ -1,0 +1,48 @@
+!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Details</title>
+</head>
+<body>
+
+    <h2>Enter Employee Details</h2>
+
+    Name: <input type="text" id="name"><br><br>
+    Salary: <input type="number" id="salary"><br><br>
+
+    <button onclick="addEmployee()">Add Employee</button>
+    <button onclick="showEmployees()">Show Salary > 50000</button>
+
+    <h3>Output:</h3>
+    <div id="output"></div>
+
+    <script>
+        let employees = [];
+
+        function addEmployee() {
+            let name = document.getElementById("name").value;
+            let salary = document.getElementById("salary").value;
+
+            employees.push({ name: name, salary: Number(salary) });
+
+            document.getElementById("name").value = "";
+            document.getElementById("salary").value = "";
+
+            alert("Employee Added");
+        }
+
+        function showEmployees() {
+            let output = document.getElementById("output");
+            output.innerHTML = "";
+
+            for (let i = 0; i < employees.length; i++) {
+                if (employees[i].salary > 50000) {
+                    output.innerHTML += "Name: " + employees[i].name + 
+                                        ", Salary: " + employees[i].salary + "<br>";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
